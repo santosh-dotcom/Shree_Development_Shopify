@@ -27,10 +27,10 @@
           </div>
         </div>
       {% when 'featured_image' %}
-        <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx:auto overflow-hidden">
+        <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx:auto overflow-hidden my-4">
           {% if article.image != blank %}
             <img
-              class="w-full h-80 md:h-96 object-cover object-center p-5"
+              class="w-full h-80 md:h-96 object-cover object-center"
               src="{{ article.image | image_url: width: 500 }}"
               alt="{{ article.image.alt }}"
             >
