@@ -86,6 +86,19 @@
             >
           </div>
         </div>
+        <div class="px-1 md:flex mb-3">
+          <div class="md:w-full px-3">
+            <label for="comment_content" class="text-gray-700 font-medium uppercase text-xs mb-2">Comment</label>
+            <textarea
+              class="w-full text-gray-700 resize-none h-20 py-2 px-3 focus:outline-none"
+              name="comment[body]"
+              id="comment_content"
+              required
+              cols="30"
+              rows="10"
+            ></textarea>
+          </div>
+        </div>
       </div>
     {% endform %}
   </div>
