@@ -27,7 +27,7 @@
           </div>
         </div>
       {% when 'featured_image' %}
-        <div class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx:auto overflow-hidden my-4">
+        <div itemprop="image" class="max-w-7xl bg-blue-100 rounded-lg mx-2 md:mx:auto overflow-hidden my-4">
           {% if article.image != blank %}
             <img
               class="w-full h-80 md:h-96 object-cover object-center"
@@ -42,7 +42,7 @@
 
       {% when 'article_content' %}
         <div class="flex items-center justify-center">
-          <div class="max-w-4xl">
+          <div itemprop="articleBody" class="max-w-4xl">
             {{ article.content }}
           </div>
         </div>
