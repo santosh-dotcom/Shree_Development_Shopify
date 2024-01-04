@@ -17,11 +17,15 @@
           </div>
         </div>
       {% when 'article_published_date' %}
-        {% if section.settings.enable_published_date %}
-          <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-            {{- article.published_at | date: '%Y-%m-%d' -}}
-          </time>
-        {% endif %}
+        <div class="flex items-center justify-center">
+          <div class="max=w-7xl text-center">
+            {% if section.settings.enable_published_date %}
+              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                {{- article.published_at | date: '%Y-%m-%d' -}}
+              </time>
+            {% endif %}
+          </div>
+        </div>
       {% when 'featured_image' %}
         <img src="{{ article.image | image_url: 'large'}}" alt="{{ article.image.alt }}">
       {% when 'article_content' %}
