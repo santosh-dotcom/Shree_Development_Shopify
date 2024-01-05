@@ -1,8 +1,17 @@
+{% if cart.item_count > 0 %}
+{% else %}
+  <div class="max-w-6xl h-60 my-4 flex items-center justify-center">
+    <div class="text-center">
+      <h1 class="text-3xl my-4">Your Cart</h1>
+    </div>
+  </div>
+{% endif %}
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Section name",
+  "settings": []
+}
 {% endschema %}
 
 {% stylesheet %}
