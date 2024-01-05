@@ -150,7 +150,7 @@
   </div>
 {% endif %}
 
-<script>
+<script type="application/ld+json">
   "@context": "http://schema.org",
   "type": "BlogPosting",
   "headline": {{ article.title | json }},
@@ -164,7 +164,15 @@
     ]
       {% endif %}}
       "datePublished": {{ article.published_at | date: format: "default" | json }},
-      "dateCreated": {{ article.created_at | date: format: "default" | json }}
+      "dateCreated": {{ article.created_at | date: format: "default" | json }},
+      "author": {
+        "@type": "person",
+          "name": {{ article.author | json }}
+      },
+    "publisher": {
+      "@type": "organization",
+          "name": {{ shop.name | json }}
+    }
 </script>
 
 {% schema %}
