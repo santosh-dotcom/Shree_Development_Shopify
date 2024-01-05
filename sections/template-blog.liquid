@@ -6,6 +6,7 @@
       {% else %}
         {{ 'image' | placeholder_svg_tag: 'w-20' }}
       {% endif %}
+      <h1>{{ article.title }}</h1>
     </div>
   {% endfor %}
 {% endpaginate %}
