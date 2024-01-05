@@ -61,7 +61,18 @@
           </tbody>
         </table>
         <div class="flex flex-co md:flex-row item-center justify-between">
-          <div class="w-full my-4"></div>
+          <div class="w-full my-4">
+            <div class="flex flex-col items-start">
+              <label for="cart_notes" class="my-1">Cart Notes</label>
+              <textarea
+                name="note"
+                id="cart_notes"
+                class="w-full md:max-w-lg resize-none border h-20"
+                col="30"
+                row="10"
+              ></textarea>
+            </div>
+          </div>
           <div class="w-full my-4 md:w-80">
             <h3 class="text-xl">Subtotal: {{ cart.total_price | money }}</h3>
             <div class="my-2">
