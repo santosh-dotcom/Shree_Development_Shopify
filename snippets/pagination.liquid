@@ -3,7 +3,7 @@
     {% if pagination.previous %}
       <a
         href="{{ pagination.previous.url }}"
-        class="border border-gray-600 text-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium"
+        class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium"
       >
         {{- pagination.previous.title -}}
       </a>
@@ -12,7 +12,7 @@
     {% for part in pagination.parts %}
       <a
         href="{{ part.url }}"
-        class="border border-gray-600 text-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium"
+        class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium"
       >
         {{- part.title -}}
       </a>
@@ -21,7 +21,7 @@
     {% if pagination.next %}
       <a
         href="{{ pagination.next.url }}"
-        class="border border-gray-600 text-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium"
+        class="border border-gray-600 text-gray-600 hover:bg-gray-600 hover:text-white px-8 py-3 mx-1 rounded-sm font-medium"
       >
         {{- pagination.next.title -}}
       </a>
