@@ -163,6 +163,8 @@
       {{ article.image | image_url: "medium" | prepend: 'http:' | json}}
     ]
       {% endif %}}
+      "datePublished": {{ article.published_at | date: format: "default" | json }},
+      "dateCreated": {{ article.created_at | date: format: "default" | json }}
 </script>
 
 {% schema %}
