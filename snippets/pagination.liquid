@@ -1,7 +1,9 @@
 {% if pagination.pages > 0 %}
   <nav role="navigation" class="flex justify-center my-8">
     {% if pagination.previous %}
-      <a href="{{ pagination.previous.url }}">{{ pagination.previous.title }}</a>
+      <a href="{{ pagination.previous.url }}" class="border border-gray-600 text-gray-600 hover:text-white">
+        {{- pagination.previous.title -}}
+      </a>
     {% endif %}
     {% if pagination.next %}
       <a href="{{ pagination.next.url }}">{{ pagination.next.title }}</a>
