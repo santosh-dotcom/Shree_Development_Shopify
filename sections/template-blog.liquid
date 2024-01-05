@@ -8,9 +8,13 @@
           <div class="w-full py-6 px-3">
             <div class="bg-white shadow-xl rounded-lg overflow-hidden">
               {% if article.image %}
-                <img src="{{ article.image | image_url: 'master' }}" alt="{{ article.image.alt }}">
+                <img
+                  class="w-full h-80 object-cover"
+                  src="{{ article.image | image_url: 'master' }}"
+                  alt="{{ article.image.alt }}"
+                >
               {% else %}
-                {{ 'image' | placeholder_svg_tag: 'w-20' }}
+                {{ 'image' | placeholder_svg_tag: 'w-full h-80 object-cover bg-gray-100' }}
               {% endif %}
               <h1>{{ article.title }}</h1>
 
