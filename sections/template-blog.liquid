@@ -1,8 +1,20 @@
+{% paginate blog.articles by 3 %}
+  {% for article in blog.articles %}
+    <div>
+      {% if article.image %}
+        <img src="{{ article.image | image_url: 'master' }}" alt="{{ article.image.alt }}">
+      {% else %}
+        {{ 'image' | placeholder_svg_tag: 'w-20' }}
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endpaginate %}
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Section name",
+  "settings": []
+}
 {% endschema %}
 
 {% stylesheet %}
