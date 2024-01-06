@@ -7,6 +7,11 @@
           "type": "subtotal",
           "settings": {
           }
+        },
+        "update-button": {
+          "type": "update_button",
+          "settings": {
+          }
         }
       },
       "block_order": [
