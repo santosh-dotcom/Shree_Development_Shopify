@@ -2,6 +2,16 @@
   "sections": {
     "template": {
       "type": "template-cart",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "subtotal"
+      ],
       "settings": {
       }
     }
