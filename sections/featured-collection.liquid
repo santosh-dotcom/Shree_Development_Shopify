@@ -8,6 +8,7 @@
         {% render 'product-card', product: product %}
       {% else %}
         {% for item in (1..4) %}
+          {% render 'product-card-placeholder' %}
         {% endfor %}
       {% endfor %}
     </div>
@@ -37,7 +38,12 @@
           "default": 4,
           "label": "Number of Products to show"
         }
-      ]
+      ],
+  "presets": [
+    {
+      "name": "Featured Colletion"
+    }
+  ]
 }
 {% endschema %}
 
