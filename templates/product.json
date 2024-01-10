@@ -4,9 +4,16 @@
       "type": "template-product",
       "settings": {
       }
+    },
+    "a0fb5d82-1d7e-43c6-95bd-fcdb090b1ec5": {
+      "type": "contact-form",
+      "settings": {
+        "title": "Contact Us"
+      }
     }
   },
   "order": [
-    "template"
+    "template",
+    "a0fb5d82-1d7e-43c6-95bd-fcdb090b1ec5"
   ]
 }
