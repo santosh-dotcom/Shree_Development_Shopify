@@ -1,8 +1,24 @@
+<div class="max-w-6xl mx-auto my-8">
+  <div class="grid grid-col-1 md:grid-col-2 gap-3">
+    <div class="product--medias">
+      <div class="hidden md:block">
+        {% for media in product.media %}
+          <div class="h-100 overflow-hidden p-2">
+            {% render 'product-media', media: media %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="product--information"></div>
+  </div>
+</div>
+
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Section name",
+  "settings": []
+}
 {% endschema %}
 
 {% stylesheet %}
