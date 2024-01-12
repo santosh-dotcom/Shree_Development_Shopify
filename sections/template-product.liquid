@@ -84,6 +84,21 @@
             </div>
           {% endunless %}
         </div>
+
+        <div class="my-3">
+          <label for="Quantity-{{ section.id }}">Quantity</label>
+
+          <div class="my-2">
+            <input
+              type="number"
+              name="Quantity"
+              id="Quantity-{{ section.id }}"
+              value="1"
+              min="1"
+              class="w-full border px-3 py-3"
+            >
+          </div>
+        </div>
       {% endform %}
     </div>
   </div>
