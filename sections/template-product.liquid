@@ -181,7 +181,11 @@
           if(findings) return variant;
         }
       );
-      console.log(this.currentVariant)
+      console.log(this.currentVariant);
+    }
+    updateURL() {
+      if(!this.currentVariant) return;
+      window.history.replaceState({}, '', `${this.dataset.url}?variant=${this.currentVariant.id}`);
     }
   }
 
