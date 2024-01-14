@@ -104,16 +104,21 @@
           </div>
 
           <div class="my-3">
-            <button type="submit" name="add" class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
-              {% if product.selected_or_first_available_variant == false %} disabled {% endif %}>
+            <button
+              type="submit"
+              name="add"
+              class="w-full px-6 py-4 bg-gray-900 text-white hover:bg-gray-700 rounded-sm my-2"
+              {% if product.selected_or_first_available_variant == false %}
+                disabled
+              {% endif %}
+            >
               {% if product.selected_or_first_available_variant.available == false %}
                 Sold Out
               {% else %}
                 Add to cart
               {% endif %}
-              </button>
-          </div
-          
+            </button>
+          </div>
         </div>
       {% endform %}
     </div>
