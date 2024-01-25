@@ -106,6 +106,7 @@
             id="address_country_{{ form.id }}"
             value="{{ form.country }}"
             class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
+            data-country-selector
           >
             {{ all_country_option_tags }}
           </select>
@@ -186,6 +187,41 @@
     {% endpaginate %}
   </div>
 </div>
+
+<script>
+    class CustomerAddress {
+      constructor() {
+        this.initCustomerAddress();
+      }
+      initCustomerAddress(){
+  const allAddressesSelector = document.querySelectorAll("select[data-country-selector]")
+      if(allAddressesSelector.length < 1) return;
+
+
+        allAddressSelector.forEach(select=> {
+          var selectedCountry = this.getSelectedCountry(select);
+        })
+      }
+
+      getSelectedCountry(select) {
+        var option, selectedOption;
+        for(var index=0; index < select.options.length; index++){
+          option = select.option[index];
+
+          if(option.value === select.getAttribute('value')) {
+              selectedOption = option;
+            selectedOption.setAttribute('selected', 'selected');
+            break;
+          }
+        }
+
+        return selectedOptions;
+      }
+
+    }
+
+    const customerAddress = new customerAddress();
+</script>
 
 {% schema %}
 {
