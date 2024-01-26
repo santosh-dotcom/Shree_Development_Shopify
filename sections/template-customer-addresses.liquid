@@ -107,6 +107,7 @@
             value="{{ form.country }}"
             class="w-full text-gray-700 border px-4 py-3 focus:outline-none"
             data-country-selector
+            data-id="{{ form.id }}"
           >
             {{ all_country_option_tags }}
           </select>
@@ -200,6 +201,29 @@
 
         allAddressSelector.forEach(select=> {
           var selectedCountry = this.getSelectedCountry(select);
+
+          if(!selectedCountry) return;
+
+          var provinces = selectedCountry.dataset.provinces;
+          var arrayOfProvince = JSON.parse(provinces);
+
+          var provienceSelector = document.querySelector(`#address_province_${select.dataset.id}`);
+
+          if(arrayOfProvince.length < 1) {
+            provinceSelector.setAttribute('disabled', 'disabled');
+          } else {
+            provinceSelector.removeAttribute('disabled');
+          }
+
+          provinceSelector.innerHTML = '';
+          var options = '';
+          for(var index = 0; index < arrayOfProvince.length; index++) {
+            if(arrayOfProvinces[index][0] === provinceSelector.getAttribute('value')) {
+              options += `option value="${arrayOfProvince[i][0]}" selected>${arrayOfProvince[index][0]}</option>`;
+            } else {
+              options += `option value="${arrayOfProvince[i][0]}">${arrayOfProvince[index][0]}</option>`;
+            }
+          }
         })
       }
 
