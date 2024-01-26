@@ -251,9 +251,27 @@
 
         addressesSlector.forEach(select => {
           select.addEventListener('change', function(e) {
-            console.log()
-          })
-        })
+            var provinces = this.options[this.selectIndex].dataset.provinces;
+            var arrayOfProvince = JSON.parse(provinces);
+
+            var provinceSelector = document.querySelector(`#address_province_${this.dataset.id}`);
+
+            if(arrayOfProvince.length < 1) {
+              provinceSelector.setAttibute('disabled', 'disabled');
+            }
+            else{
+              provinceSelector.removerAttribute('disabled');
+            }
+
+            provinceSelector.innerHTML='';
+            var options = '';
+            for(var index = 0; index < arrayofProvince.length; index++ ) {
+              options += `<option value="${arrayOfProvince[index][0]}">${arrayOfProvince[index][0]}</option>`;
+            }
+
+            provinceSelector.innerHTML = options;
+          });
+        });
         }
       }
 
