@@ -193,6 +193,7 @@
     class CustomerAddress {
       constructor() {
         this.initCustomerAddress();
+        this.customerAddressesSelector();
       }
       initCustomerAddress(){
   const allAddressesSelector = document.querySelectorAll("select[data-country-selector]")
@@ -224,6 +225,8 @@
               options += `option value="${arrayOfProvince[i][0]}">${arrayOfProvince[index][0]}</option>`;
             }
           }
+
+          provinceSelector.innerHTML = options;
         })
       }
 
@@ -240,6 +243,18 @@
         }
 
         return selectedOptions;
+      }
+
+      customerAddressSelector() {
+        const addressesSelector = document.querySelectorAll("select[data-country-selector]");
+        if(addressesSelector.length < 1) return;
+
+        addressesSlector.forEach(select => {
+          select.addEventListener('change', function(e) {
+            console.log()
+          })
+        })
+        }
       }
 
     }
