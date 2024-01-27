@@ -400,7 +400,9 @@
 
             var confirmation = window.confirm("Do you really wish to delete this address?");
 
-            document.querySelector(`form[action="${url}"]`).submit();
+            if(confirmation) {
+                 document.querySelector(`form[action="${url}"]`).submit();
+            }           
           })
         })
       }
