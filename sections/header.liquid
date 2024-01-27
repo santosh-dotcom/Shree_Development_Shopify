@@ -21,7 +21,7 @@
       </div>
 
       <!-- NAVIGATION MENU -->
-      <nav x-data="{ open:false }" class="hidden md:flex space-x-10">
+      <nav class="hidden md:flex space-x-10">
         {% liquid
           if section.settings.menu.links == blank
             assign main_menu_linklist = linklists[section.settings.menu].links
