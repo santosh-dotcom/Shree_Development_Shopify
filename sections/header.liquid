@@ -22,6 +22,13 @@
 
       <!-- NAVIGATION MENU -->
       <nav x-data="{ open:false }" class="hidden md:flex space-x-10">
+        {% liquid
+          if section.settings.menu.links == blank
+            assign main_menu_linklist = linklists[section.settings.menu].links
+          else
+            assign main_menu_lisnklists = section.settings.menu.links
+          endif
+        %}
         {% for link in main_menu_linklist %}
           {% assign link_handle = link.handle | replace: '-', '_' %}
           {% if link.links != blank %}
