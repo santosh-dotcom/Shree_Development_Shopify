@@ -20,7 +20,7 @@
 
       if(!mediaID) return;
 
-      const openModalButton = this.querySelector(`button[id="productModelOpenButton_${}"]`);
+      const openModalButton = this.querySelector(`button[id="productModelOpenButton_${mediaID}"]`);
 
       openModalButton.addEventListener('click', function(e) {
         modal.querySelector("#body").innetHTML = "";
