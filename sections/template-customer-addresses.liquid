@@ -398,6 +398,8 @@
           button.addEventListener("click", function(e) {
             var url = this.dataset.url;
 
+            var confirmation = window.confirm("Do you really wish to delete this address?");
+
             document.querySelector(`form[action="${url}"]`).submit();
           })
         })
