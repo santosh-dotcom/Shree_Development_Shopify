@@ -193,8 +193,16 @@
                 >
                   Edit
                 </button>
-                <button class="w-full text-xs font-medium text-gray-700 border py-2" data-delete-address>Delete</button>
+                <button
+                  class="w-full text-xs font-medium text-gray-700 border py-2"
+                  data-url="{{ address.url }}"
+                  data-delete-address
+                >
+                  Delete
+                </button>
               </div>
+
+              {% form method="post" action="{{ address.url }}" %}{% endform %}
             </div>
             <div
               x-show="address_{{ address.id }}"
@@ -382,7 +390,17 @@
 
       initDeleteAddressButtons(){
         const deleteButtons = document.queryselectorAll("button[data-address-selector]");
+        if(deleteButtons.length < 1) return;
+
+        deleteButtons.forEach(button => {
+          button.addEventListener("click", function(e) {
+            var url = this.dataset.url;
+
+            document.querySelector(`form[action="${url}"]`);
+          })
+        })
       }
+      
       initCustomerAddress(){
   const allAddressesSelector = document.querySelectorAll("select[data-country-selector]")
       if(allAddressesSelector.length < 1) return;
