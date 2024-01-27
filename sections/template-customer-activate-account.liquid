@@ -7,6 +7,14 @@
 
     <div>
       {% form 'activate_customer_password', class: 'space-py-4', id: 'activate_account_form' %}
+        {% if form.errors %}
+          <div class="relative border border-red-700 bg-red-100 text-red-700 px-4 py-3" role="alert">
+            <strong class="font-bold">Error!</strong>
+            <span class="block sm:inline">
+              {{ form.errors | default_errors }}
+            </span>
+          </div>
+        {% endif %}
         <div>
           <label for="password">Password </label>
           <input
@@ -29,6 +37,20 @@
             class="relative block w-full px-3 py-2 border placeholder-gray-300 text-gray-700"
             autocomplete="new-password"
           >
+        </div>
+        <div class="block md:flex">
+          <button
+            type="submit"
+            class="w-full border py-2 px-4 text-sm font-medium text-white bg-gray-700 hover:bg-gray-900"
+          >
+            Activate Account
+          </button>
+          <button
+            type="submit"
+            class="w-full border py-2 px-4 text-sm font-medium text-gray-700 bg-white hover:bg-gray-700 hover:thext-white"
+          >
+            Decline Invitation
+          </button>
         </div>
       {% endform %}
     </div>
