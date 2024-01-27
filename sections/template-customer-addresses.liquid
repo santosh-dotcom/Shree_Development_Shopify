@@ -202,7 +202,9 @@
                 </button>
               </div>
 
-              {% form method="post" action="{{ address.url }}" %}{% endform %}
+              <form method="post" action="{{ address.url }}">
+                <input type="hidden" name="_method" value="delete">
+              </form>
             </div>
             <div
               x-show="address_{{ address.id }}"
@@ -396,7 +398,7 @@
           button.addEventListener("click", function(e) {
             var url = this.dataset.url;
 
-            document.querySelector(`form[action="${url}"]`);
+            document.querySelector(`form[action="${url}"]`).submit();
           })
         })
       }
