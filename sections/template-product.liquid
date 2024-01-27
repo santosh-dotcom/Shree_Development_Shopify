@@ -219,7 +219,9 @@
 </script>
 
 <script>
-  const swiper = new Swiper('.swiper', {
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+       const swiper = new Swiper('.swiper', {
     direction: 'horizontal',
 
     pagination: {
@@ -230,6 +232,8 @@
       prevEl: '.swiper-button-prev',
       nextEl: '.swiper-button-next'
     }
+  })
+    } catch(e) {console.log('error');}
   })
 </script>
 
